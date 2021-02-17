@@ -10,9 +10,9 @@ requirements:
 baseCommand: ["f5c", "call-methylation", "--disable-cuda=yes"] 
 arguments:
   - valueFrom: ">"
-    position: 4
+    position: 5
   - valueFrom: $(inputs.sample_ID)_meth_call.csv
-    position: 5    
+    position: 6    
 inputs:
   - id: reference
     type: File
@@ -30,7 +30,12 @@ inputs:
       position: 3
       prefix: "-b"    
   - id: sample_ID
-    type: string        
+    type: string  
+  - id: threads
+    type: int
+    inputBinding:
+      position: 4
+      prefix: "-t"      
 outputs: 
   meth_calls_tsv:
     type: File

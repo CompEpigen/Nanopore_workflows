@@ -3,7 +3,7 @@ class: CommandLineTool
 requirements:
   InlineJavascriptRequirement: {}
 
-baseCommand: ["python3", "../tools/reformat_tsv.py"] 
+baseCommand: ["python3", "reformat_tsv.py"] #put the reformat_tsv.py in $PATH
 arguments:
   - valueFrom: $(inputs.sample_ID).methrix.bedgraph
     prefix: "-o"

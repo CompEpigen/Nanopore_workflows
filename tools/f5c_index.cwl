@@ -20,6 +20,11 @@ inputs:
     type: File
     inputBinding:
       position: 2
+  - id: threads
+    type: int
+    inputBinding:
+      position: 3
+      prefix: "-t"        
 outputs: 
   - id: input_fastq_indexed
     type: File
@@ -30,20 +35,4 @@ outputs:
       - .index.readdb
     outputBinding:
       glob: $(inputs.input_fastq.basename)
-
-#  - id: index
-#    type: File
-#    outputBinding:
-#      glob: "*.index"
-#  - id: index_gzi
-#    type: File
-#    outputBinding:
-#      glob: "*.index.gzi"
-#  - id: index_fai
-#    type: File
-#    outputBinding:
-#      glob: "*.index.fai"
-#  - id: index_readdb
-#    type: File
-#    outputBinding:
-#      glob: "*.index.readdb"                  
+               

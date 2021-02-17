@@ -11,3 +11,5 @@ in_fast5_dir:
 reference:
   class: File
   path: draft.fa
+threads: 1
+

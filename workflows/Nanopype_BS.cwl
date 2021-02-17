@@ -16,6 +16,8 @@ inputs:
     type: File
     secondaryFiles:
       - .fai
+  - id: threads
+    type: int
 
 
 steps: 
@@ -46,6 +48,8 @@ steps:
           source: in_fast5_dir
         - id: input_fastq
           source: merge_fastqs/merged_fastq
+        - id: threads
+          source: threads          
       out:
         - id: input_fastq_indexed   
 
@@ -55,7 +59,9 @@ steps:
         - id: reference
           source: reference
         - id: input_fastq
-          source: merge_fastqs/merged_fastq
+          source: f5c_index/input_fastq_indexed
+        - id: threads
+          source: threads
       out: 
         - id: bam #        
 
@@ -86,6 +92,8 @@ steps:
           source: f5c_index/input_fastq_indexed
         - id: bam_sorted_indexed
           source: samtools_index/bam_sorted_indexed
+        - id: threads
+          source: threads
       out: 
         - id: meth_calls_tsv  
 
@@ -96,6 +104,8 @@ steps:
           source: sample_ID       
         - id: meth_calls_tsv
           source: call_meth/meth_calls_tsv
+        - id: threads
+          source: threads          
       out:
         - id: meth_freq_tsv
 
@@ -106,6 +116,8 @@ steps:
           source: sample_ID       
         - id: bam_sorted_indexed
           source: samtools_index/bam_sorted_indexed
+        - id: threads
+          source: threads          
       out:
         - id: tsv
 

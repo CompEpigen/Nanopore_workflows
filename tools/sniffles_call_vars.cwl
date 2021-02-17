@@ -15,9 +15,14 @@ inputs:
     type: File
     inputBinding:
       prefix: "-m"
-      position: 1
+      position: 2
   - id: sample_ID
     type: string  
+  - id: threads
+    type: int
+    inputBinding:
+      position: 3
+      prefix: "-t"     
 outputs: 
   tsv:
     type: File

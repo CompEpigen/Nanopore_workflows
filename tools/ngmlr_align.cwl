@@ -5,6 +5,10 @@ requirements:
   DockerRequirement:
     dockerPull: cyverse/ngmlr:0.2.7
     dockerOutputDirectory: /opt  
+  InitialWorkDirRequirement:
+    listing:
+      - $(inputs.reference)  
+      - $(inputs.input_fastq)   
 
 baseCommand: ["ngmlr", "-x", "ont"] 
 arguments:
@@ -23,7 +27,12 @@ inputs:
     type: File
     inputBinding:
       prefix: "-q"
-      position: 2    
+      position: 2   
+  - id: threads
+    type: int
+    inputBinding:
+     prefix: "-t"
+     position: 3 
 outputs: 
   - id: bam
     type: File

@@ -17,6 +17,11 @@ inputs:
       position: 1
   - id: sample_ID
     type: string
+  - id: threads
+    type: int
+    inputBinding:
+      position: 2
+      prefix: "-t"     
 outputs: 
   meth_freq_tsv:
     type: File
