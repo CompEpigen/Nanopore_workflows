@@ -1,0 +1,13 @@
+sample_ID: "AR"
+sequencing_summary:
+  class: File
+  path: sequencing_summary.txt 
+basecalled_fastq:
+  - class: File
+    path: reads.fasta
+in_fast5_dir:
+  class: Directory
+  path: fast5_files
+reference:
+  class: File
+  path: draft.fa
