@@ -1,10 +1,7 @@
 cwlVersion: v1.0
 class: CommandLineTool
 requirements:
-  InlineJavascriptRequirement: {}
-  DockerRequirement:
-    dockerPull: tleonardi/f5c:v0.6
-    dockerOutputDirectory: /opt  
+  ShellCommandRequirement: {}
   InitialWorkDirRequirement:
     listing:
       - $(inputs.input_fastq)
