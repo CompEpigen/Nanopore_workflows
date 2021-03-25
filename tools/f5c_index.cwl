@@ -1,5 +1,11 @@
 cwlVersion: v1.0
 class: CommandLineTool
+hints:
+  SoftwareRequirement:
+    packages:
+    - package: f5c
+      specs:
+        - https://anaconda.org/bioconda/f5c
 requirements:
   ShellCommandRequirement: {}
   InitialWorkDirRequirement:
