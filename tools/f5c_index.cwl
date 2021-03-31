@@ -1,18 +1,18 @@
 cwlVersion: v1.0
 class: CommandLineTool
-hints:
-  SoftwareRequirement:
-    packages:
-    - package: f5c
-      specs:
-        - https://anaconda.org/bioconda/f5c
+#hints:
+#  SoftwareRequirement:
+#    packages:
+#    - package: f5c
+#      specs:
+#        - https://anaconda.org/bioconda/f5c
 requirements:
   ShellCommandRequirement: {}
   InitialWorkDirRequirement:
     listing:
       - $(inputs.input_fastq)
 
-baseCommand: ["f5c", "index"] 
+baseCommand: ["/home/mayerma/f5c-v0.6/f5c_x86_64_linux", "index"] 
 inputs: 
   - id: in_fast5_dir
     type: Directory
