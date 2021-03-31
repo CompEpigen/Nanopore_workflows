@@ -12,7 +12,8 @@ requirements:
     listing:
       - $(inputs.input_fastq)
 
-baseCommand: ["/home/mayerma/f5c-v0.6/f5c_x86_64_linux", "index"] 
+baseCommand: ["bin/f5c-v0.6/f5c_x86_64_linux", "index"]
+#["/home/mayerma/f5c-v0.6/f5c_x86_64_linux", "index"] 
 inputs: 
   - id: in_fast5_dir
     type: Directory
