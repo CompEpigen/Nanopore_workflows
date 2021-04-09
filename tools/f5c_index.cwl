@@ -12,7 +12,7 @@ requirements:
     listing:
       - $(inputs.input_fastq)
 
-baseCommand: ["/home/mayermaanaconda3/envs/f5c/bin/f5c", "index"] 
+baseCommand: ["/home/mayerma/anaconda3/envs/f5c/bin/f5c", "index"] 
 #["bin/f5c-v0.6/f5c_x86_64_linux", "index"]
 #["/home/mayerma/f5c-v0.6/f5c_x86_64_linux", "index"] 
 inputs: 
