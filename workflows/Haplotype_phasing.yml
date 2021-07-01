@@ -1,0 +1,8 @@
+sample_ID: "AR"
+raw_methcall:
+  class: File
+  path: /home/m168r/cwl/test.tsv 
+vcf_short_raw:
+  class: File
+  path: /home/m168r/cwl/test.tsv 
+vcf_short_prepared: /home/m168r/cwl/tools/hello.tsv
