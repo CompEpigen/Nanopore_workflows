@@ -1,8 +1,7 @@
 sample_ID: "AR"
 raw_methcall:
   class: File
-  path: /home/m168r/cwl/test.tsv 
+  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/GCTB/DOWNSTREAM/GCTB_pipeline_output/AR.meth_calls.tsv
 vcf_short_raw:
   class: File
-  path: /home/m168r/cwl/test.tsv 
-vcf_short_prepared: /home/m168r/cwl/tools/hello.tsv
+  path: /icgc/dkfzlsdf/project/Xintern/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/snv_results/paired/tumor_control/results_SNVCallingWorkflow-1.0.166-1_v1_2_2016-12-16_05h38_+0100/snvs_XI041_AR_raw.vcf.gz

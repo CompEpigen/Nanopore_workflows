@@ -2,9 +2,9 @@ cwlVersion: v1.0
 class: CommandLineTool
 requirements:
   InlineJavascriptRequirement: {}
-baseCommand: ["sh", "/home/m168r/cwl/tools/insert_missing_column.sh"]
+baseCommand: ["sh", "/home/m168r/projects/Nanopore_workflows/tools/prep_methcall_phasing.sh"]
 arguments:
-  - valueFrom: $(inputs.sample_ID).preparedMethcall.tsv
+  - valueFrom: $(inputs.sample_ID).prepared_methcall.tsv
     prefix: "-o"
 inputs: 
   - id: raw_methcall
@@ -14,10 +14,10 @@ inputs:
   - id: sample_ID
     type: string
 outputs: 
-  preparedMC:
+  prepared_methcall:
     type: File
     outputBinding:
-      glob: $(inputs.sample_ID).preparedMethcall.tsv
+      glob: $(inputs.sample_ID).prepared_methcall.tsv
    
 
   
