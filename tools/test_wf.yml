@@ -1,0 +1,4 @@
+sample_ID: "AR"
+phased_vcf:
+  type: File
+  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/AR/phased_short_read_AR.vcf
