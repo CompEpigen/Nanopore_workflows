@@ -11,7 +11,11 @@ bam_shortread:
   #path: /icgc/dkfzlsdf/project/Xintern/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/tumor/paired/merged-alignment/.merging_0/tumor_XI041_AR_merged.mdup.bam
 ref_shortread:
   class: File
-  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/hs37d5_PhiX.fa.fai
+  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/hs37d5_PhiX.fa
+indexed_fasta:
+  class: File
+  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/hs37d5_PhiX.fa.fai  
+  
 bam_nanopore:
   class: File
   path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/GCTB/DOWNSTREAM/GCTB_pipeline_output/AR.sorted.bam

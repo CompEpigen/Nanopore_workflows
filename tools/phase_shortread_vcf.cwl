@@ -15,13 +15,16 @@ arguments:
 inputs: 
   - id: ref_shortread
     type: File
+    secondaryFiles: 
+      - .fai
     inputBinding:
-      #prefix: -r
-      prefix: --reference
+      prefix: -r
   - id: sample_ID
     type: string
   - id: bam_shortread
     type: File
+    secondaryFiles: 
+      - .bai
     inputBinding:
       #prefix: -b
       position: 2
@@ -30,6 +33,8 @@ inputs:
     inputBinding:
       #prefix: -v
       position: 1
+  #- id: indexed_fasta
+  #  type: File
 outputs: 
   vcf_short_phased:
     type: File
