@@ -36,19 +36,19 @@ steps:
       out:
         - id: vcf_short_prepared
         
-  #  - id: phase_shortread_vcf
-  #    run: "../tools/phase_shortread_vcf.cwl"
-  #    in:
-  #      - id: sample_ID
-  #        source: sample_ID
-  #      - id: bam_shortread
-  #        source: bam_shortread
-  #      - id: ref_shortread
-  #        source: ref_shortread
-  #      - id: vcf_short_prepared
-  #        source: prepare_shortread_vcf/vcf_short_prepared
-  #    out:
-  #      - id: vcf_short_phased    
+    - id: phase_shortread_vcf
+      run: "../tools/phase_shortread_vcf.cwl"
+      in:
+        - id: sample_ID
+          source: sample_ID
+        - id: bam_shortread
+          source: bam_shortread
+        - id: ref_shortread
+          source: ref_shortread
+        - id: vcf_short_prepared
+          source: prepare_shortread_vcf/vcf_short_prepared
+      out:
+        - id: vcf_short_phased    
         
 outputs: 
   - id: prepared_methcall
@@ -57,6 +57,6 @@ outputs:
   - id: vcf_short_prepared
     type: File
     outputSource: prepare_shortread_vcf/vcf_short_prepared
- # - id: vcf_short_phased
- #   type: File
- #   outputSource: phase_shortread_vcf/vcf_short_phased
+  - id: vcf_short_phased
+    type: File
+    outputSource: phase_shortread_vcf/vcf_short_phased

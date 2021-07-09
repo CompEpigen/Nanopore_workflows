@@ -3,12 +3,12 @@ class: CommandLineTool
 requirements:
   InlineJavascriptRequirement: {}
   DockerRequirement:
-    dockerPull: kkimler/r4.0_tca
+    dockerPull: r-base:4.0.0
     
-baseCommand: ["Rscript", "/home/m168r/projects/Nanopore_workflows/tools/convert_chr_names.R"]
+baseCommand: ["Rscript", "/home/m168r/projects/Nanopore_workflows/tools/test.R"]
 arguments:
   - valueFrom: $(inputs.sample_ID).phased_shortread_conv.vcf
-    porefix: o
+    prefix: o
 inputs: 
   - id: sample_ID
     type: string
@@ -17,7 +17,7 @@ inputs:
     inputBinding:
       prefix: i
 outputs: 
-  bam_nanopore_prepared:
+  vcf_shortread_conv:
     type: File
     outputBinding:
       glob: $(inputs.sample_ID).phased_shortread_conv.vcf

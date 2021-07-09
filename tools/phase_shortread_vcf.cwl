@@ -3,12 +3,12 @@ class: CommandLineTool
 requirements:
   InlineJavascriptRequirement: {}
   DockerRequirement:
-    dockerPull:  quay.io/biocontainers/whatshap:1.1-1
-    
+    #dockerPull: ken01nn/whatshap:0.18   
+    dockerPull: quay.io/biocontainers/whatshap:1.1--py36hae55d0a_1
 baseCommand: ["whatshap", "phase", "--ignore-read-groups"]
 arguments:
   - valueFrom: $(inputs.sample_ID).phased_shortread.vcf
-    position: 2
+    prefix: o
 inputs: 
   - id: ref_shortread
     type: File
