@@ -6,14 +6,12 @@ requirements:
     dockerPull: quay.io/biocontainers/whatshap:1.1--py36hae55d0a_1
 
 baseCommand: ["whatshap", "phase", "--ignore-read-groups"]
-#baseCommand: ["sh", "/scratch/marco/Nanopore_workflows/tools/runWhatshap.sh"]
-#baseCommand: ["sh", "/scratch/marco/Nanopore_workflows/tools/prep_methcall_phasing.sh"]
 
 arguments:
   - valueFrom: $(inputs.sample_ID).phased_shortread.vcf
     prefix: "-o"
 inputs: 
-  - id: ref_shortread
+  - id: reference
     type: File
     secondaryFiles: 
       - .fai
@@ -26,17 +24,13 @@ inputs:
     secondaryFiles: 
       - .bai
     inputBinding:
-      #prefix: -b
       position: 2
-  - id: vcf_short_prepared
+  - id: vcf_shortread_prepared
     type: File
     inputBinding:
-      #prefix: -v
       position: 1
-  #- id: indexed_fasta
-  #  type: File
 outputs: 
-  vcf_short_phased:
+  vcf_shortread_phased:
     type: File
     outputBinding:
       glob: $(inputs.sample_ID).phased_shortread.vcf

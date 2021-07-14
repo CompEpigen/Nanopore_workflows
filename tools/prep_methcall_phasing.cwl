@@ -7,14 +7,14 @@ arguments:
   - valueFrom: $(inputs.sample_ID).prepared_methcall.tsv
     prefix: "-o"
 inputs: 
-  - id: raw_methcall
+  - id: methcall
     type: File
     inputBinding:
       prefix: -i
   - id: sample_ID
     type: string
 outputs: 
-  prepared_methcall:
+  methcall_prepared:
     type: File
     outputBinding:
       glob: $(inputs.sample_ID).prepared_methcall.tsv
