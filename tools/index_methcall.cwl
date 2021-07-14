@@ -6,8 +6,6 @@ requirements:
     dockerPull: biocontainers/tabix:v1.9-11-deb_cv1
     dockerOutputDirectory: /opt
   ShellCommandRequirement: {} 
-#baseCommand: ["sh", "/scratch/marco/Nanopore_workflows/tools/index_methcall.sh"]
-
 baseCommand: ["cat"]
 
 arguments:
@@ -17,7 +15,7 @@ arguments:
     position: 3
   - valueFrom: ">"
     position: 4
-  - valueFrom: $(inputs.sample_ID).indexed_methcall.tsv
+  - valueFrom: $(inputs.sample_ID).indexed_methcall.tsv.gz
     position: 5
   - valueFrom: "&&"
     position: 6
@@ -27,10 +25,10 @@ arguments:
     position: 8
   - valueFrom: "bed"
     position: 9
-  - valueFrom: $(inputs.sample_ID).indexed_methcall.tsv
+  - valueFrom: $(inputs.sample_ID).indexed_methcall.tsv.gz
     position: 10
 inputs: 
-  - id: processed_methcall
+  - id: methcall_processed
     type: File
     inputBinding:
       #prefix: -i
@@ -38,7 +36,9 @@ inputs:
   - id: sample_ID
     type: string
 outputs: 
-  indexed_methcall:
+  methcall_indexed:
     type: File
     outputBinding:
-      glob: $(inputs.sample_ID).indexed_methcall.tsv
+      glob: $(inputs.sample_ID).indexed_methcall.tsv.gz
+    secondaryFiles: 
+      - .tbi

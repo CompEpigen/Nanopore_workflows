@@ -16,7 +16,7 @@ arguments:
 inputs: 
   - id: sample_ID
     type: string
-  - id: processed_methcall
+  - id: methcall_indexed
     type: File
     inputBinding:
       prefix: "-mc"
@@ -28,7 +28,7 @@ inputs:
       prefix: "-b"
     secondaryFiles: 
       - .bai
-  - id: phased_shortread
+  - id: vcf_shortread_phased
     type: File
     inputBinding:
       prefix: "-v"
@@ -49,7 +49,7 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.sample_ID).phased_methcall_NanoMethPhase_HP2_Converted2Bisulfite.bam
-  phased_methcall:
+  methcall_phased:
     type: File
     outputBinding:
       glob: $(inputs.sample_ID).phased_methcall_NanoMethPhase_HP1_HP2_PerReadInfo.tsv
