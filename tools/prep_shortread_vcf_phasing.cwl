@@ -2,7 +2,7 @@ cwlVersion: v1.0
 class: CommandLineTool
 requirements:
   InlineJavascriptRequirement: {}
-baseCommand: ["sh", "/scratch/marco/Nanopore_workflows/tools/prep_shortread_vcf_phasing.sh"]
+baseCommand: ["sh", "/home/m168r/projects/Nanopore_workflows/tools/prep_shortread_vcf_phasing.sh"]
 arguments:
   - valueFrom: $(inputs.sample_ID).prepared_shortread.vcf
     prefix: "-o"

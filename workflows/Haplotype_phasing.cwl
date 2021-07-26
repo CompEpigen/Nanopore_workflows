@@ -6,27 +6,37 @@ requirements:
 inputs:
   - id: sample_ID
     type: string
+  - id: format
+    type: string
   - id: methcall
     type: File
   - id: vcf_shortread
     type: File
+    secondaryFiles:
+      - .tbi
   - id: bam_shortread
+    secondaryFiles:
+      - .bai
     type: File
   - id: bam_nanopore
     type: File
+    secondaryFiles:
+      - .bai
   - id: reference
     type: File
+    secondaryFiles:
+      - .fai
 
 steps: 
-    - id: prepare_methcall  
-      run: "../tools/prep_methcall_phasing.cwl"    
-      in:
-        - id: sample_ID
-          source: sample_ID      
-        - id: methcall
-          source: methcall
-      out:
-        - id: methcall_prepared
+ #   - id: prepare_methcall  
+ #     run: "../tools/prep_methcall_phasing.cwl"    
+ #     in:
+ #       - id: sample_ID
+ #         source: sample_ID      
+  #      - id: methcall
+   #       source: methcall
+    #  out:
+     #   - id: methcall_prepared
       
     - id: prepare_vcf_shortread
       run: "../tools/prep_shortread_vcf_phasing.cwl"
@@ -48,6 +58,7 @@ steps:
         - id: reference
           source: reference
         - id: vcf_shortread_prepared
+          #source: vcf_shortread
           source: prepare_vcf_shortread/vcf_shortread_prepared
       out:
         - id: vcf_shortread_phased 
@@ -56,9 +67,11 @@ steps:
       run: "../tools/process_methcall.cwl"    
       in:
         - id: sample_ID
-          source: sample_ID      
+          source: sample_ID   
         - id: methcall_prepared
-          source: prepare_methcall/methcall_prepared
+          source: methcall   
+      #  - id: methcall_prepared
+     #     source: prepare_methcall/methcall_prepared
       out:
         - id: methcall_processed
 
@@ -112,7 +125,7 @@ steps:
 outputs: 
   - id: vcf_shortread_phased
     type: File
-    outputSource: phase_shortread_vcf/vcf_shortread_phased
+    outputSource: phase_vcf_shortread/vcf_shortread_phased
   - id: haplotype_one
     type: File
     outputSource: phase_methcall/haplotype_one

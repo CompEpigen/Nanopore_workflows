@@ -1,20 +1,21 @@
 sample_ID: "AR"
-raw_methcall:
+format: "bam2bis"
+methcall:
   class: File
-  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/GCTB/DOWNSTREAM/GCTB_pipeline_output/AR.meth_calls.tsv
-vcf_short_raw:
+  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/clusterjob/minimap_test/AR.methcall_final.tsv
+vcf_shortread:
   class: File
   path: /icgc/dkfzlsdf/project/Xintern/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/snv_results/paired/tumor_control/results_SNVCallingWorkflow-1.0.166-1_v1_2_2016-12-16_05h38_+0100/snvs_XI041_AR_raw.vcf.gz
 bam_shortread:
   class: File
-  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/tumor_XI041_AR_merged.mdup.bam.bai
-  #path: /icgc/dkfzlsdf/project/Xintern/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/tumor/paired/merged-alignment/.merging_0/tumor_XI041_AR_merged.mdup.bam
-ref_shortread:
+  path: /icgc/dkfzlsdf/project/Xintern/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/tumor/paired/merged-alignment/.merging_0/tumor_XI041_AR_merged.mdup.bam
+reference:
   class: File
   path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/hs37d5_PhiX.fa
 bam_nanopore:
   class: File
-  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/GCTB/DOWNSTREAM/GCTB_pipeline_output/AR.sorted.bam
+  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/clusterjob/minimap_test/AR.sorted.bam
+
 
 
 
