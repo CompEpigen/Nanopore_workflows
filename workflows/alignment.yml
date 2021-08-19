@@ -1,0 +1,9 @@
+sample_ID: "AR_test"
+threads: "8"
+fastq:
+  class: File
+  path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/results_per_pid/AR_test_dataset/AR_test.fastq
+  #path: /home/m168r/nanopore_drive/NanoMethPhase/results_per_pid/AR3/test.fastq
+reference:
+  class: File
+  path: /icgc/ngs_share/assemblies/hg19_GRCh37_1000genomes/sequence/hg19_chr/hg19_1-22_X_Y_M.fa
