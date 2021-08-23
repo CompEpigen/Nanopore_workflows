@@ -22,7 +22,8 @@ The most important prerequisite for option 1, however, is that the shortread SNV
 If the reference is different, option 2 must be used.
 
 #### Run option 1:
-Option 1 can be used with cwltool. the following code will work at the odcf-worker01 because support of singularity images is required.
+Option 1 can be used with cwltool. Further the machine has to support singularity images, as different tools are required.
+The following code example shows how to execute the workflow on "odcf-worker01". Since the home directories have limited memory, we need to specify a path for temporary files, otherwise they will exceed the memory capacity. Furthermore, cwltool stores the created outputs in the directory in which it is executed. Therefore, it is recommended to create a seperate directory for this run.
 
 ```bash
 

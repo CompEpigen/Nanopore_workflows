@@ -20,14 +20,10 @@ arguments:
     position: 5
   - valueFrom: "-k3,3n"
     position: 6
-
-
   - valueFrom: ">"
     position: 7
-
   - valueFrom: $(inputs.sample_ID).processed_methcall.tsv
     position: 8
-
 
 inputs: 
   - id: sample_ID

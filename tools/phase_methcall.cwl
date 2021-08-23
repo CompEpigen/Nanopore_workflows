@@ -45,10 +45,12 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.sample_ID).phased_methcall_NanoMethPhase_HP1_Converted2Bisulfite.bam
+     #glob: $(inputs.sample_ID).phased_methcall_NanoMethPhase_HP1*
   haplotype_two:
     type: File
     outputBinding:
       glob: $(inputs.sample_ID).phased_methcall_NanoMethPhase_HP2_Converted2Bisulfite.bam
+      #glob: $(inputs.sample_ID).phased_methcall_NanoMethPhase_HP2*
   methcall_phased:
     type: File
     outputBinding:
