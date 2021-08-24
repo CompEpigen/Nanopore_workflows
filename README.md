@@ -46,9 +46,9 @@ mkdir $tmp_dir
 mkdir $tmp_subdir
 ## change to output directory
 cd $out_dir
-## run workflow (memory usage can be upt to 15Gb ... )
+## run workflow (memory usage can be upt to 15Gb) ... 
 cwltool --singularity --tmp-outdir-prefix $tmp_subdir "${wrk_dir}/Haplotype_phasing.cwl" "${wrk_dir}/Haplotype_phasing.yml"
-## .. thats why we recommend using a cluiterjob:
+## .. thats why it is recommended to use a clusterjob:
 bsub -W 48:00 -M 20000 -R "rusage[mem=20000]" -J "wf Haplotype phasing $run" \
 -n 10 -R "span[ptile=10]" -oo $log -eo $log -env "all" \
 "cwltool --singularity --tmp-outdir-prefix $tmp_subdir "${wrk_dir}/Haplotype_phasing.cwl" "${wrk_dir}/Haplotype_phasing.yml""
@@ -93,7 +93,7 @@ mkdir $tmp_subdir
 cd $out_dir
 ## run workflow (memory usage can be upt to 15Gb ... )
 cwltool --singularity --tmp-outdir-prefix $tmp_subdir "${wrk_dir}/full_processing.cwl" "${wrk_dir}/full_processing.yml"
-## .. thats why we recommend using a cluiterjob:
+## .. thats why we recommend using a clusterjob:
 bsub -W 25:00 -M 50000 -R "rusage[mem=50000]" -J "test wf full $run" \
 -n 10 -R "span[ptile=10]" -oo $log -eo $log -env "all" \
 "cwltool --singularity --tmp-outdir-prefix $tmp_subdir "${wrk_dir}/full_processing.cwl" "${wrk_dir}/full_processing.yml""

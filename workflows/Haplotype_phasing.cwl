@@ -28,16 +28,6 @@ inputs:
       - .fai
 
 steps: 
- #   - id: prepare_methcall  
- #     run: "../tools/prep_methcall_phasing.cwl"    
- #     in:
- #       - id: sample_ID
- #         source: sample_ID      
-  #      - id: methcall
-   #       source: methcall
-    #  out:
-     #   - id: methcall_prepared
-      
     - id: prepare_vcf_shortread
       run: "../tools/prep_shortread_vcf_phasing.cwl"
       in:
@@ -70,8 +60,6 @@ steps:
           source: sample_ID   
         - id: methcall_prepared
           source: methcall   
-      #  - id: methcall_prepared
-     #     source: prepare_methcall/methcall_prepared
       out:
         - id: methcall_processed
 
