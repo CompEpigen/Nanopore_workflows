@@ -24,6 +24,8 @@ inputs:
       - .fai
   - id: vcf_shortread
     type: File
+    secondaryFiles:
+      - .tbi    
   - id: bam_shortread
     type: File
     secondaryFiles:

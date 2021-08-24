@@ -26,7 +26,7 @@ inputs:
     inputBinding:
       position: 2
   - id: vcf_shortread_prepared
-    type: File
+    type: File   
     inputBinding:
       position: 1
 outputs: 

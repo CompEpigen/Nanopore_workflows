@@ -11,6 +11,8 @@ inputs:
     type: File
     inputBinding:
       prefix: -i
+    secondaryFiles: 
+      - .tbi 
   - id: sample_ID
     type: string
 outputs: 

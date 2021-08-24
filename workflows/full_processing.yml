@@ -3,15 +3,14 @@ format: "bam2bis"
 threads: "8"
 vcf_shortread:
   class: File
-  #path: /home/m168r/nanopore/NanoMethPhase/Example_Data/NA19240_chr21_phased.vcf
-  path: /icgc/dkfzlsdf/project/OE0219/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/snv_results/paired/tumor_control/results_SNVCallingWorkflow-1.0.166-1_v1_2_2016-12-16_05h38_+0100/snvs_XI041_AR.vcf.gz
+  path: /icgc/dkfzlsdf/project/Xintern/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/snv_results/paired/tumor_control/results_SNVCallingWorkflow-1.0.166-1_v1_2_2016-12-16_05h38_+0100/snvs_XI041_AR_raw.vcf.gz
 bam_shortread:
   class: File
   path:  /icgc/dkfzlsdf/project/OE0219/XI041_giant_cell_tumor_of_bone/sequencing/whole_genome_sequencing/view-by-pid/XI041_AR/tumor/paired/merged-alignment/tumor_XI041_AR_merged.mdup.bam
 reference:
   class: File
-  path: /icgc/ngs_share/assemblies/hg19_GRCh37_1000genomes/sequence/hg19_chr/hg19_1-22_X_Y_M.fa 
-  #path: /home/m168r/nanopore/NanoMethPhase/Example_Data/chr21.fa
+  path: /icgc/ngs_share/assemblies/hg19_GRCh37_1000genomes/sequence/1KGRef_Phix/hs37d5_PhiX.fa
+  #path: /icgc/ngs_share/assemblies/hg19_GRCh37_1000genomes/sequence/hg19_chr/hg19_1-22_X_Y_M.fa
 fastq:
   class: File
   path: /icgc/dkfzlsdf/analysis/OE0219_projects/nanopore/NanoMethPhase/results_per_pid/AR_test_dataset/AR_test.fastq
